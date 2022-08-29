@@ -13,6 +13,7 @@
     "element-plus": "^2.2.15",
     "font-awesome": "^4.7.0",
     "i18n": "^0.15.0",
+    "moment": "^2.29.4",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-i18n": "^9.2.2",

@@ -1,11 +1,32 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <ElConfigProvider :locale="locale">
+        <router-view />
+  </ElConfigProvider>
 </template>
 
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import { ElConfigProvider } from 'element-plus';
+import localStorageAuthService from './common/authStorage';
+import { DEFAULT_LANGUAGE, SUPPORT_LANGUAGE } from './common/constants';
+import en from '@/plugins/element-ui/locale/en';
+import vi from '@/plugins/element-ui/locale/vi';
+
+@Options({
+  components: {
+    ElConfigProvider
+  },
+})
+export default class App extends Vue {
+  get locale() {
+    const lang = localStorageAuthService.getLanguage() || DEFAULT_LANGUAGE;
+        if (lang === SUPPORT_LANGUAGE.VI) {
+            return vi;
+        }
+        return en;
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
