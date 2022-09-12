@@ -1,9 +1,9 @@
 <template>
     <div class="header">
         <div class="button-menu" @click="toggleSideBar">
-            <el-icon><Menu /></el-icon>
-            <img class="img-fluid" src="../../assets/ic-film.png" style="width: 40px; height: 40px;"/>
+            <img class="img-fluid ic-menu" src="../../assets/ic-menu.png" style="width: 28px; height: 28px;"/> 
         </div>
+        <img class="img-fluid" src="../../assets/ic-film.png" style="width: 40px; height: 40px;"/>
         <div class="search-box">
             <el-input
                 class="w-50 m-2"
@@ -40,7 +40,7 @@ export default class MainHeader extends Vue {
 <style lang="scss" scoped>
 .header {
     width: 100%;
-    height: 80px;
+    height: 60px;
     background: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -51,14 +51,10 @@ export default class MainHeader extends Vue {
     margin-left: 25px;
     display: flex;
     align-items: center;
-    ::v-deep(.el-icon) {
+    .ic-menu {
         margin-right: 35px;
         width: 28px !important;
         height: 28px !important;
-        svg{
-            width: 28px !important;
-            height: 28px !important;
-        }
     }
 }
 .search-box {

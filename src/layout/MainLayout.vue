@@ -2,7 +2,7 @@
     <div class="main-layout">
         <MainHeader/>
         <div class="main-board">
-            <div class="menu-sidebar">
+            <div class="menu-sidebar" :class="!isCollapse? 'sidebar' : 'mini-sidebar'">
                 <SideBar :isCollapse="isCollapse"/>
             </div>
             <div class="main-content">
@@ -42,6 +42,13 @@ export default class MainLayout extends Vue {
     display: flex;
     .menu-sidebar{
         width: 250px;
+        &.mini-sidebar{
+            width: 80px;
+        }
+    }
+    .main-content {
+        background: gray;
+        width: 100%;
     }
 }
 

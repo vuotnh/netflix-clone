@@ -41,6 +41,11 @@ export default class SideBar extends Vue {
 }
 </script>
 <style lang="scss" scoped>
+    .main-sidebar {
+        &.mini-sidebar {
+            width: 60px;
+        }
+    }
 .item-content {
     margin-left: 15px;
     font-weight: 700;
@@ -52,6 +57,10 @@ export default class SideBar extends Vue {
 }
 .collapsed-menu-item{
     padding-right: 5px;
+}
+
+::v-deep(.el-menu) {
+    border-right: none;
 }
 
 </style>
