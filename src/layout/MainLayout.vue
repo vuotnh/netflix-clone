@@ -6,7 +6,6 @@
                 <SideBar :isCollapse="isCollapse"/>
             </div>
             <div class="main-content">
-                Main-board
                 <router-view v-slot="{ Component }">
                     <component :is="Component" />
                 </router-view>
@@ -47,7 +46,6 @@ export default class MainLayout extends Vue {
         }
     }
     .main-content {
-        background: gray;
         width: 100%;
     }
 }

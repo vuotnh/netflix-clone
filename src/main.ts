@@ -10,6 +10,7 @@ import plugins from './plugins';
 import router from './plugins/vue-router';
 
 
+
 const app = createApp(App)
 app.use(store).use(router).use(plugins.i18n)
 .use(plugins.ElementUI, {
@@ -17,4 +18,8 @@ app.use(store).use(router).use(plugins.i18n)
         return plugins.i18n.global.t(key, plugins.i18n.global.locale);
     },
 });
-app.mount('#app')
+
+router.isReady().then(() => {
+    app.mount('#app');
+});
+

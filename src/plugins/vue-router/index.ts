@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import { routers } from './routers';
 import MainLayout from '../../layout/MainLayout.vue';
+import HomePage from '../../features/homePage/pages/HomePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -8,9 +9,19 @@ const routes: Array<RouteRecordRaw> = [
         redirect: '/home'
     }, 
     {
-        path: "/home",
+        path: "/",
         component: MainLayout,
-        children: []
+        children: [
+            {
+                path: '/home',
+                name: "Home", 
+                component: HomePage,
+            }
+        ]
+    },
+    {
+        path: '/read-book/:id',
+        component: HomePage,
     }
 ]
 
