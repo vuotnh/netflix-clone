@@ -8,3 +8,9 @@ export interface ISidebar {
     pageName?: string;
     badge?: number | string;
 }
+
+export interface IFile {
+    id: number;
+    name: string;
+    url: string;
+}

@@ -14,13 +14,14 @@
             
         </div>
         <div class="helper-button">
-            <el-button circle> <el-icon><Plus /></el-icon></el-button>
+            <el-button circle @click="showBookForm"> <el-icon><Plus /></el-icon></el-button>
             <el-button>Login</el-button>
         </div>
-        
+        <CreateNewBook v-model="isShowBookFormDialog"/>
     </div>
 </template>
 <script lang="ts">
+import CreateNewBook from '@/features/homePage/components/CreateNewBook.vue';
 import { appModule } from '@/plugins/vuex/appModule';
 import { Search, Menu, Plus } from '@element-plus/icons-vue'
 import { Options, Vue } from 'vue-class-component'
@@ -29,11 +30,17 @@ import { Options, Vue } from 'vue-class-component'
     components: {
         Search,
         Menu, 
-        Plus
+        Plus,
+        CreateNewBook,
     }
 })
 export default class MainHeader extends Vue {
+    isShowBookFormDialog = false;
     Search = Search;
+
+    showBookForm(){
+        this.isShowBookFormDialog = true;
+    }
     toggleSideBar() {
         appModule.setIsCollapseSidebar();
     }
@@ -65,6 +72,16 @@ export default class MainHeader extends Vue {
         .el-input__wrapper{
             border-radius: 20px;
         }
+    }
+}
+
+// style dialog
+::v-deep(.el-dialog) {
+    border-radius: 20px;
+    background-color: rgba(255, 255,255, 0.9);
+    .el-dialog__title {
+        font-size: 30px;
+        font-weight: 700;
     }
 }
 </style>
