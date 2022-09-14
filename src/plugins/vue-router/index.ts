@@ -9,15 +9,9 @@ const routes: Array<RouteRecordRaw> = [
         redirect: '/home'
     }, 
     {
-        path: "/",
+        path: "/home",
         component: MainLayout,
-        children: [
-            {
-                path: '/home',
-                name: "Home", 
-                component: HomePage,
-            }
-        ]
+        children: []
     },
     {
         path: '/read-book/:id',

@@ -14,6 +14,7 @@
             
         </div>
         <div class="helper-button">
+            <el-button circle> <el-icon><Plus /></el-icon></el-button>
             <el-button>Login</el-button>
         </div>
         
@@ -21,13 +22,14 @@
 </template>
 <script lang="ts">
 import { appModule } from '@/plugins/vuex/appModule';
-import { Search, Menu } from '@element-plus/icons-vue'
+import { Search, Menu, Plus } from '@element-plus/icons-vue'
 import { Options, Vue } from 'vue-class-component'
 
 @Options({
     components: {
         Search,
-        Menu
+        Menu, 
+        Plus
     }
 })
 export default class MainHeader extends Vue {
